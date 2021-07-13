@@ -34,6 +34,13 @@
              *  Adicionar um botão e um event handler 
              *  e o botão torna o quadrado rosa.
              */
+            
+            let btnPink = document.createElement("button");
+            btnPink.innerHTML='Pink'
+            btnPink= document.body.insertBefore(btnPink, color_box)
+            btnPink.addEventListener('click', function(){
+                color_box.classList.add('pink')
+            })
         </script>
 
         <hr>
@@ -44,9 +51,11 @@
         <script>
             let count = 0;
             const countspan = document.getElementById("countspan");
-            
             const counter_button = document.getElementById("counter_button");
+            let contando = 0;
             counter_button.onclick = function() {
+                    contando++
+                    countspan.innerText=contando
                 /* TODO 2
                  *
                  *  A função incrementa 1 em um contador "count", 
@@ -61,6 +70,8 @@
         <h2>3. Even or Odd?</h2>
         <button id="even_or_odd_button">Is the count even or odd?</button>
         <script>
+            
+            
             const even_or_odd_button = document.getElementById("even_or_odd_button");
             even_or_odd_button.onclick = function() {
                 /* TODO 3
@@ -68,6 +79,12 @@
                  * A função mostra um "alert dialog" mostrando se o contador 
                  * (da segunda tarefa (TODO 2)) é par ou impar.
                  */
+                 let contando = Number.parseInt(countspan.innerText)
+                 if(contando%2 == 0){
+                    alert("Is even")
+                 }else{
+                    alert("Is odd")
+                 }
             }
         </script>
     </body>
